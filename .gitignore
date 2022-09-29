@@ -39,4 +39,9 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Store!/config/
+!/config/
+!/config/
+/src/main/resources/bot.properties
+/config/config.json
+/data/

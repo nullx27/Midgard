@@ -9,7 +9,6 @@ object Reminders : IntIdTable() {
     var user = varchar("user", 64) // TODO: 27/09/2022 snowflakes are 64bit not 30characters smh
     var guild = varchar("guild", 64) // TODO: 27/09/2022 snowflakes are 64bit not 30characters smh
     var channel = varchar("channel", 64) // TODO: 27/09/2022 snowflakes are 64bit not 30characters smh
-    var isPublic = bool("isPublic")
     var created: Column<LocalDateTime> = datetime("created")
     var expires = datetime("expires")
     var text = text("text")

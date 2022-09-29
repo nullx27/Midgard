@@ -1,4 +1,8 @@
 package tech.grimm.midgard.commands
+import me.jakejmattson.discordkt.commands.commands
 
-class Ping {
+fun ping() = commands("Utility") {
+    slash("ping", "Ping the Bot") {
+        execute { respond("Pong!") }
+    }
 }
