@@ -11,7 +11,7 @@ on:
       - 'master'
 
 jobs:
-  deploy-docker-hello-world:
+  docker:
     runs-on: ubuntu-latest
 
     steps:
