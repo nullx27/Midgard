@@ -17,12 +17,11 @@ import tech.grimm.midgard.persistence.Reminders
 import tech.grimm.midgard.services.Permissions
 import java.awt.Color
 
-
 @OptIn(PrivilegedIntent::class)
 @KordPreview
-suspend fun main(args: Array<String>) {
+suspend fun main() {
 
-    bot(args.firstOrNull()) {
+    bot(System.getenv("DISCORD_TOKEN")) {
         val configuration = data("data/config.json") { Configuration() }
 
         prefix { configuration.prefix }

@@ -7,11 +7,11 @@
 | /Category   | This is a subcommand group.    |
 
 ## /RemindMe
-| Commands | Arguments                        | Description                  |
-|----------|----------------------------------|------------------------------|
-| List     |                                  | List all my active reminders |
-| New      | Reminder, Amount, Unit, [Public] | Create a new Reminder        |
-| Remove   | ID                               | Remove a reminder            |
+| Commands | Arguments              | Description                  |
+|----------|------------------------|------------------------------|
+| List     |                        | List all my active reminders |
+| New      | Reminder, Amount, Unit | Create a new Reminder        |
+| Remove   | ID                     | Remove a reminder            |
 
 ## Media
 | Commands | Arguments | Description            |

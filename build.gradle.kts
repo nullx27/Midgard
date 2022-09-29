@@ -22,8 +22,6 @@ dependencies {
     implementation("org.jetbrains.exposed", "exposed-jdbc", "0.39.1")
     implementation("org.jetbrains.exposed", "exposed-java-time", "0.39.1")
     implementation("org.xerial", "sqlite-jdbc", "3.30.1")
-
-
 }
 
 tasks.withType<KotlinCompile> {
@@ -37,4 +35,8 @@ tasks.register<WriteProperties>("writeProperties") {
     property("version", version.toString())
     property("url", "https://github.com/nullx27/midgard")
     setOutputFile("src/main/resources/bot.properties")
+}
+
+tasks.jar {
+    archiveFileName.set("midgard.jar")
 }
