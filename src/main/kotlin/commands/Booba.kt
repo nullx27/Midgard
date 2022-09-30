@@ -10,7 +10,7 @@ fun booba(boobaService: BoobaService) = commands("Fun") {
 
     slash("Booba", "Get a currently running Booba Stream") {
         execute(BooleanArg("Top").optional(false)) {
-            val stream = if (args.first) boobaService.getRandomEntry() else boobaService.getTopEntry()
+            val stream = if (!args.first) boobaService.getRandomEntry() else boobaService.getTopEntry()
 
             respondPublic {
                 author {
