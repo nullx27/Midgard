@@ -1,4 +1,4 @@
-name: Deploy Hello World
+name: Docker Build and Push
 
 on:
   push:
