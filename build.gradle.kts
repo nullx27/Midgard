@@ -42,7 +42,7 @@ tasks.register<WriteProperties>("writeProperties") {
     property("description", project.description.toString())
     property("version", version.toString())
     property("url", "https://github.com/nullx27/midgard")
-    setOutputFile("src/main/resources/midgard.properties")
+    setOutputFile("src/main/resources/bot.properties")
 }
 
 tasks.withType<Jar> {
@@ -55,7 +55,7 @@ tasks.withType<Jar> {
     }
 
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    
+
     from(configurations.runtimeClasspath.get()
         .map { if (it.isDirectory) it else zipTree(it) } +
             sourceSets.main.get().output)
