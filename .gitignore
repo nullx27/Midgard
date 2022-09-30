@@ -45,3 +45,4 @@ bin/
 /src/main/resources/bot.properties
 /config/config.json
 /data/
+/src/main/resources/midgard.properties
