@@ -19,7 +19,7 @@ fun booba(boobaService: BoobaService) = commands("Fun") {
                     icon = "https://booba.tv/img/062f0974c68fad4eb3deaaac6513ea44.gif"
                 }
 
-                title = stream.user_display_name
+                title = stream.stream_title
                 url = "https://www.twitch.tv/${stream.user_display_name}"
 
                 thumbnail {
@@ -28,9 +28,9 @@ fun booba(boobaService: BoobaService) = commands("Fun") {
                         .replace("{height}", "360", true)
                 }
 
-                addField("Category", stream.stream_game_name)
                 addInlineField("Streamer", stream.user_display_name)
                 addInlineField("Viewer", stream.stream_viewer_count)
+                addField("Category", stream.stream_game_name)
             }
 
         }

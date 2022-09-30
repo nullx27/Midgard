@@ -7,7 +7,6 @@
 | /Category   | This is a subcommand group.    |
 
 ## /RemindMe
-
 | Commands | Arguments              | Description                  |
 |----------|------------------------|------------------------------|
 | List     |                        | List all my active reminders |
@@ -15,19 +14,16 @@
 | Remove   | ID                     | Remove a reminder            |
 
 ## Fun
-
 | Commands | Arguments | Description                          |
 |----------|-----------|--------------------------------------|
-| Booba    | [Random]  | Get a currently running Booba Stream |
+| Booba    | [Top]     | Get a currently running Booba Stream |
 
 ## Media
-
 | Commands | Arguments | Description            |
 |----------|-----------|------------------------|
 | youtube  | Search    | Search a youtube video |
 
 ## Utility
-
 | Commands     | Arguments        | Description                |
 |--------------|------------------|----------------------------|
 | Help         | [Command]        | Display a help menu.       |
