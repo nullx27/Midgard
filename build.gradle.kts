@@ -28,6 +28,8 @@ dependencies {
     implementation("org.jetbrains.exposed", "exposed-jdbc", "0.39.1")
     implementation("org.jetbrains.exposed", "exposed-java-time", "0.39.1")
     implementation("org.xerial", "sqlite-jdbc", "3.30.1")
+
+    implementation("org.reflections", "reflections", "0.10.2")
 }
 
 tasks.withType<KotlinCompile> {

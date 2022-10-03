@@ -5,7 +5,6 @@ import dev.kord.core.behavior.channel.asChannelOf
 import dev.kord.core.behavior.channel.createMessage
 import dev.kord.core.entity.Guild
 import dev.kord.core.entity.User
-import dev.kord.core.entity.channel.DmChannel
 import dev.kord.core.entity.channel.MessageChannel
 import dev.kord.core.entity.channel.TextChannel
 import dev.kord.rest.builder.message.create.allowedMentions

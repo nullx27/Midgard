@@ -15,6 +15,7 @@ import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
 import tech.grimm.midgard.data.Configuration
+import tech.grimm.midgard.lib.scheduler.Scheduler
 import tech.grimm.midgard.persistence.Reminders
 import tech.grimm.midgard.services.Permissions
 import java.awt.Color
@@ -24,6 +25,7 @@ import java.awt.Color
 suspend fun main() {
     runBlocking {
         launch {
+
             bot(System.getenv("DISCORD_TOKEN")) {
                 val configuration = data("data/config.json") { Configuration() }
 
@@ -67,6 +69,8 @@ suspend fun main() {
                     helpCategory = "Utility"
                     commandRecommendation = "Recommendation: {0}"
                 }
+
+                inject(Scheduler())
             }
         }
     }
