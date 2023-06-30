@@ -28,7 +28,7 @@ fun openai(openAiService: OpenAiService) = subcommand("OpenAI") {
 
             responder?.respond {
                 // respect the field character limit and make sure code is rendered properly
-                if (response.length < 1024 || !response.contains("```")) {
+                if (response.length < 1024 && !response.contains("```")) {
                     embed {
                         author {
                             name = "OpenAI"
