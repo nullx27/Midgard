@@ -23,7 +23,6 @@
 | Remove   | ID                     | Remove a reminder            |
 
 ## Fun
-
 | Commands | Arguments | Description                          |
 |----------|-----------|--------------------------------------|
 | Booba    | [Top]     | Get a currently running Booba Stream |

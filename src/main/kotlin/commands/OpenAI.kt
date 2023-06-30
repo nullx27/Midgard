@@ -5,6 +5,7 @@ import dev.kord.rest.builder.message.modify.embed
 import me.jakejmattson.discordkt.arguments.AnyArg
 import me.jakejmattson.discordkt.commands.subcommand
 import me.jakejmattson.discordkt.extensions.addField
+import me.jakejmattson.discordkt.extensions.addInlineField
 import tech.grimm.midgard.services.OpenAiService
 
 fun openai(openAiService: OpenAiService) = subcommand("OpenAI") {
@@ -28,7 +29,7 @@ fun openai(openAiService: OpenAiService) = subcommand("OpenAI") {
 
             responder?.respond {
                 // respect the field character limit and make sure code is rendered properly
-                if (response.length < 1024 && !response.contains("```")) {
+                if (response.length < 4096) {
                     embed {
                         author {
                             name = "OpenAI"
@@ -41,8 +42,8 @@ fun openai(openAiService: OpenAiService) = subcommand("OpenAI") {
                         }
 
                         title = "ChatGPT"
-                        addField("Prompt", args.first)
-                        addField("Answer", response)
+                        description = response
+                        addInlineField("Prompt", args.first)
                     }
                 } else {
                     content = response
