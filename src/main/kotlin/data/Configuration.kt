@@ -13,4 +13,4 @@ data class Configuration(
 
 
 @kotlinx.serialization.Serializable
-data class APIs(val youtube: String = "", val wolframAlpha: String = "")
+data class APIs(val youtube: String = "", val wolframAlpha: String = "", val openAI: String = "")

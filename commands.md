@@ -1,12 +1,21 @@
 # Commands
 
-## Key 
-| Symbol      | Meaning                        |
-|-------------|--------------------------------|
-| [Argument]  | Argument is not required.      |
-| /Category   | This is a subcommand group.    |
+## Key
+
+| Symbol     | Meaning                     |
+|------------|-----------------------------|
+| [Argument] | Argument is not required.   |
+| /Category  | This is a subcommand group. |
+
+## /OpenAI
+
+| Commands | Arguments               | Description                   |
+|----------|-------------------------|-------------------------------|
+| Chat     | Message, [Instructions] | Talk to ChatGPT               |
+| image    | Prompt                  | Generate an Image with DALL-E |
 
 ## /RemindMe
+
 | Commands | Arguments              | Description                  |
 |----------|------------------------|------------------------------|
 | List     |                        | List all my active reminders |
@@ -14,6 +23,7 @@
 | Remove   | ID                     | Remove a reminder            |
 
 ## Fun
+
 | Commands | Arguments | Description                          |
 |----------|-----------|--------------------------------------|
 | Booba    | [Top]     | Get a currently running Booba Stream |

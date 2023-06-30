@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "tech.grimm"
 description = "Discord bot"
-version = "0.1"
+version = "1.5"
 
 plugins {
     application
@@ -28,6 +28,8 @@ dependencies {
     implementation("org.jetbrains.exposed", "exposed-jdbc", "0.39.1")
     implementation("org.jetbrains.exposed", "exposed-java-time", "0.39.1")
     implementation("org.xerial", "sqlite-jdbc", "3.30.1")
+    implementation("com.aallam.openai", "openai-client", "3.3.0")
+
 }
 
 tasks.withType<KotlinCompile> {
