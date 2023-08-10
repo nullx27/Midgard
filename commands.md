@@ -8,14 +8,12 @@
 | /Category  | This is a subcommand group. |
 
 ## /OpenAI
-
 | Commands | Arguments               | Description                   |
 |----------|-------------------------|-------------------------------|
 | Chat     | Message, [Instructions] | Talk to ChatGPT               |
 | image    | Prompt                  | Generate an Image with DALL-E |
 
 ## /RemindMe
-
 | Commands | Arguments              | Description                  |
 |----------|------------------------|------------------------------|
 | List     |                        | List all my active reminders |

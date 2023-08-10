@@ -21,7 +21,7 @@ class OpenAiService(private val configuration: Configuration) {
 
     suspend fun sendChatMessage(message: String, instruction: String): String? {
         val chatCompletionRequest = ChatCompletionRequest(
-            model = ModelId("gpt-3.5-turbo"),
+            model = ModelId("gpt-4"),
             messages = listOf(
                 ChatMessage(
                     role = ChatRole.System,

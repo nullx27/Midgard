@@ -8,8 +8,14 @@ import me.jakejmattson.discordkt.extensions.addField
 import me.jakejmattson.discordkt.extensions.addInlineField
 import tech.grimm.midgard.services.OpenAiService
 
+/**
+ * Executes a subcommand for OpenAI operations.
+ *
+ * @param openAiService the OpenAiService instance to use for API calls
+ */
 fun openai(openAiService: OpenAiService) = subcommand("OpenAI") {
-    sub("Chat", "Talk to ChatGPT") {
+
+sub("Chat", "Talk to ChatGPT") {
         execute(
             AnyArg("Message", "Chat Text"),
             AnyArg(
