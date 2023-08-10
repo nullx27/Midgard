@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "tech.grimm"
 description = "Discord bot"
-version = "1.5"
+version = "1.6"
 
 plugins {
     application
