@@ -2,8 +2,8 @@ package tech.grimm.midgard.commands
 
 import me.jakejmattson.discordkt.arguments.BooleanArg
 import me.jakejmattson.discordkt.commands.commands
-import me.jakejmattson.discordkt.extensions.addField
-import me.jakejmattson.discordkt.extensions.addInlineField
+import me.jakejmattson.discordkt.util.addField
+import me.jakejmattson.discordkt.util.addInlineField
 import tech.grimm.midgard.services.BoobaService
 
 fun booba(boobaService: BoobaService) = commands("Fun") {

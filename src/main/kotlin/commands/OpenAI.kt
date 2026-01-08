@@ -1,11 +1,11 @@
 package tech.grimm.midgard.commands
 
 import dev.kord.core.behavior.interaction.response.respond
-import dev.kord.rest.builder.message.modify.embed
+import dev.kord.rest.builder.message.embed
 import me.jakejmattson.discordkt.arguments.AnyArg
 import me.jakejmattson.discordkt.commands.subcommand
-import me.jakejmattson.discordkt.extensions.addField
-import me.jakejmattson.discordkt.extensions.addInlineField
+import me.jakejmattson.discordkt.util.addField
+import me.jakejmattson.discordkt.util.addInlineField
 import tech.grimm.midgard.services.OpenAiService
 
 /**
@@ -15,7 +15,7 @@ import tech.grimm.midgard.services.OpenAiService
  */
 fun openai(openAiService: OpenAiService) = subcommand("OpenAI") {
 
-sub("Chat", "Talk to ChatGPT") {
+    sub("Chat", "Talk to ChatGPT") {
         execute(
             AnyArg("Message", "Chat Text"),
             AnyArg(
@@ -44,12 +44,13 @@ sub("Chat", "Talk to ChatGPT") {
                         }
 
                         footer {
-                            text = "Reqeusted by ${interaction?.user?.displayName}"
+                            text = "Reqeusted by ${interaction?.user?.nickname}"
                         }
 
                         title = "ChatGPT"
                         description = response
                         addInlineField("Prompt", args.first)
+                        if (args.second.isNotEmpty()) addField("Instructions", args.second)
                     }
                 } else {
                     content = response
@@ -78,7 +79,7 @@ sub("Chat", "Talk to ChatGPT") {
                     }
 
                     footer {
-                        text = "Reqeusted by ${interaction?.user?.displayName}"
+                        text = "Reqeusted by ${interaction?.user?.nickname}"
                     }
 
                     title = "DALL-E"

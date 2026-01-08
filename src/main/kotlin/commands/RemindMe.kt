@@ -1,12 +1,11 @@
 package tech.grimm.midgard.commands
 
 import me.jakejmattson.discordkt.arguments.AnyArg
-import me.jakejmattson.discordkt.arguments.BooleanArg
 import me.jakejmattson.discordkt.arguments.ChoiceArg
 import me.jakejmattson.discordkt.arguments.IntegerArg
 import me.jakejmattson.discordkt.commands.subcommand
-import me.jakejmattson.discordkt.extensions.addField
-import me.jakejmattson.discordkt.extensions.addInlineField
+import me.jakejmattson.discordkt.util.addField
+import me.jakejmattson.discordkt.util.addInlineField
 import tech.grimm.midgard.persistence.Reminders
 import tech.grimm.midgard.services.ReminderService
 import java.time.LocalDateTime

@@ -2,6 +2,7 @@ package tech.grimm.midgard
 
 import dev.kord.common.annotation.KordPreview
 import dev.kord.gateway.Intents
+import dev.kord.gateway.PRIVILEGED
 import dev.kord.gateway.PrivilegedIntent
 import dev.kord.x.emoji.Emojis
 import kotlinx.coroutines.flow.toList
@@ -11,9 +12,11 @@ import me.jakejmattson.discordkt.dsl.CommandException
 import me.jakejmattson.discordkt.dsl.ListenerException
 import me.jakejmattson.discordkt.dsl.bot
 import me.jakejmattson.discordkt.locale.Language
-import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.SchemaUtils
-import org.jetbrains.exposed.sql.transactions.transaction
+import me.jakejmattson.discordkt.locale.Locale
+import me.jakejmattson.discordkt.locale.LocaleEN
+import org.jetbrains.exposed.v1.jdbc.Database
+import org.jetbrains.exposed.v1.jdbc.SchemaUtils
+import org.jetbrains.exposed.v1.jdbc.transactions.transaction
 import tech.grimm.midgard.data.Configuration
 import tech.grimm.midgard.persistence.Reminders
 import tech.grimm.midgard.services.Permissions
@@ -39,7 +42,7 @@ suspend fun main() {
                     dualRegistry = false
                     commandReaction = Emojis.eyes
                     theme = Color(0xe9a80f)
-                    intents = Intents.privileged
+                    intents = Intents.PRIVILEGED
                     defaultPermissions = Permissions.EVERYONE
                 }
 
@@ -60,12 +63,6 @@ suspend fun main() {
 
                     Database.connect("jdbc:sqlite:${configuration.database}", "org.sqlite.JDBC")
                     transaction { SchemaUtils.create(Reminders) }
-                }
-
-                localeOf(Language.EN) {
-                    helpName = "Help"
-                    helpCategory = "Utility"
-                    commandRecommendation = "Recommendation: {0}"
                 }
             }
         }

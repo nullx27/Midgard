@@ -4,7 +4,7 @@ import kotlinx.datetime.Clock
 import me.jakejmattson.discordkt.arguments.ChoiceArg
 import me.jakejmattson.discordkt.arguments.DoubleArg
 import me.jakejmattson.discordkt.commands.commands
-import me.jakejmattson.discordkt.extensions.addInlineField
+import me.jakejmattson.discordkt.util.addInlineField
 import tech.grimm.midgard.data.Currencies
 import tech.grimm.midgard.services.CurrencyExchangeService
 import tech.grimm.midgard.services.Permissions

@@ -8,7 +8,8 @@ data class Configuration(
     val owner: Snowflake = Snowflake(0),
     val database: String = "data/database.db",
     val apis: APIs = APIs(),
-    val prefix: String = "!"
+    val prefix: String = "!",
+    val aiInstructions: String = ""
 ) : Data()
 
 

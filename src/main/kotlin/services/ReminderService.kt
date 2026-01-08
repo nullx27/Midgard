@@ -5,22 +5,28 @@ import dev.kord.core.behavior.channel.asChannelOf
 import dev.kord.core.behavior.channel.createMessage
 import dev.kord.core.entity.Guild
 import dev.kord.core.entity.User
-import dev.kord.core.entity.channel.DmChannel
 import dev.kord.core.entity.channel.MessageChannel
 import dev.kord.core.entity.channel.TextChannel
-import dev.kord.rest.builder.message.create.allowedMentions
-import dev.kord.rest.builder.message.create.embed
+import dev.kord.rest.builder.message.allowedMentions
+import dev.kord.rest.builder.message.embed
 import kotlinx.coroutines.runBlocking
 import me.jakejmattson.discordkt.Discord
 import me.jakejmattson.discordkt.annotations.Service
-import me.jakejmattson.discordkt.extensions.addField
-import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.transactions.transaction
+import me.jakejmattson.discordkt.util.addField
+import org.jetbrains.exposed.v1.core.*
+import org.jetbrains.exposed.v1.core.statements.UpsertSqlExpressionBuilder.eq
+import org.jetbrains.exposed.v1.core.statements.UpsertSqlExpressionBuilder.inList
+import org.jetbrains.exposed.v1.core.statements.UpsertSqlExpressionBuilder.less
+import org.jetbrains.exposed.v1.jdbc.deleteWhere
+import org.jetbrains.exposed.v1.jdbc.insert
+import org.jetbrains.exposed.v1.jdbc.select
+import org.jetbrains.exposed.v1.jdbc.transactions.transaction
 import tech.grimm.midgard.persistence.Reminders
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.Timer
 import kotlin.concurrent.timerTask
+import org.jetbrains.exposed.v1.jdbc.*
 
 @Service
 class ReminderService(private val discord: Discord) {
@@ -58,7 +64,7 @@ class ReminderService(private val discord: Discord) {
     }
 
     suspend fun getByAuthorAndGuild(aUser: User, aGuild: Guild): List<ResultRow> = transaction {
-        Reminders.select { Reminders.user eq aUser.id.toString() and (Reminders.guild eq aGuild.id.toString()) }
+        Reminders.select(Reminders.user.eq(aUser.id.toString()) and (Reminders.guild.eq(aGuild.id.toString())))
             .toList()
     }
 
@@ -68,7 +74,7 @@ class ReminderService(private val discord: Discord) {
 
     private fun getExpiredReminders(): List<ResultRow> {
         val reminders = transaction {
-            Reminders.select { Reminders.expires less LocalDateTime.now() }.toList()
+            Reminders.select(Reminders.expires less LocalDateTime.now()).toList()
         }
 
         transaction {
@@ -81,7 +87,7 @@ class ReminderService(private val discord: Discord) {
 
 
     private suspend fun sendReminder(reminder: ResultRow) {
-        discord.kord.getChannel(Snowflake(reminder[Reminders.channel].toString()))?.asChannelOf<TextChannel>()
+        discord.kord.getChannel(Snowflake(reminder[Reminders.channel]))?.asChannelOf<TextChannel>()
             ?.createMessage {
                 allowedMentions {
                     users.add(Snowflake(reminder[Reminders.user]))

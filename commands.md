@@ -1,11 +1,10 @@
 # Commands
 
-## Key
-
-| Symbol     | Meaning                     |
-|------------|-----------------------------|
-| [Argument] | Argument is not required.   |
-| /Category  | This is a subcommand group. |
+## Key 
+| Symbol      | Meaning                        |
+|-------------|--------------------------------|
+| [Argument]  | Argument is not required.      |
+| /Category   | This is a subcommand group.    |
 
 ## /OpenAI
 | Commands | Arguments               | Description                   |
@@ -38,3 +37,4 @@
 | exchange     | Amount, From, To | Currency Exchange Rates    |
 | info         |                  | Bot info for Midgard       |
 | ping         |                  | Ping the Bot               |
+

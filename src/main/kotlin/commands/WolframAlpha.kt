@@ -2,7 +2,7 @@ package tech.grimm.midgard.commands
 
 import me.jakejmattson.discordkt.arguments.AnyArg
 import me.jakejmattson.discordkt.commands.commands
-import me.jakejmattson.discordkt.extensions.addField
+import me.jakejmattson.discordkt.util.addField
 import tech.grimm.midgard.services.Permissions
 import tech.grimm.midgard.services.WolframAlphaService
 
