@@ -37,8 +37,6 @@ dependencies {
     implementation("com.openai", "openai-java", "4.0.0")
 
 
-
-
 }
 
 
@@ -49,7 +47,6 @@ tasks.register<WriteProperties>("writeProperties") {
     property("description", project.description.toString())
     property("version", version.toString())
     property("url", "https://github.com/nullx27/midgard")
-    setOutputFile("src/main/resources/bot.properties")
 }
 
 tasks.withType<Jar> {
