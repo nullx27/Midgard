@@ -21,7 +21,7 @@ fun openai(openAiService: OpenAiService) = subcommand("OpenAI") {
             AnyArg(
                 "Instructions",
                 "Instruct the chat how to respond, leave empty if you don't know what you're doing!"
-            )
+            ).optional()
         ) {
 
 
